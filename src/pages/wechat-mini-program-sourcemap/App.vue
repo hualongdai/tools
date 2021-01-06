@@ -35,7 +35,9 @@
                     v-model="errorContent"
                     type="textarea"
                     :autosize="{minRows: 13, maxRows: 13}"
-                    placeholder="此处可放置错误内容，方便后续操作"
+                    placeholder="请将完整的错误内容放置在此处，完整错误内容获取方式：
+                    微信小程序管理后台 --> 开发管理 --> 运维中心 --> 错误内容。
+                    注意，请上传与错误内容相对应的 Source Map 压缩包"
                 />
             </div>
             <el-button
