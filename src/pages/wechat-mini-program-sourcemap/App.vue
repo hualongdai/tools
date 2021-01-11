@@ -35,9 +35,7 @@
                     v-model="errorContent"
                     type="textarea"
                     :autosize="{minRows: 13, maxRows: 13}"
-                    placeholder="请将完整的错误内容放置在此处，完整错误内容获取方式：
-                    微信小程序管理后台 --> 开发管理 --> 运维中心 --> 错误内容。
-                    注意，请上传与错误内容相对应的 Source Map 压缩包"
+                    :placeholder="placeholder"
                 />
             </div>
             <el-button
@@ -57,7 +55,7 @@
                 v-loading="isRequesting"
                 :data="errorList"
                 stripe
-                style="width: 100%"
+                style="width: 100%; min-height: 300px;"
             >
                 <el-table-column
                     type="index"
@@ -101,6 +99,8 @@
                 </el-table-column>
             </el-table>
         </div>
+
+        <comment-and-access-statistics></comment-and-access-statistics>
     </div>
 </template>
 
@@ -108,6 +108,7 @@
 import sourceMap from 'source-map';
 import JSZip from 'jszip';
 // import DocAndOtherParseLink from './other-sourcemap-parse-link.vue';
+import CommentAndAccessStatistics from '@/components/comment-and-access-statistics.vue';
 import { parseErrorContent } from './util';
 
 sourceMap.SourceMapConsumer.initialize({
@@ -115,15 +116,17 @@ sourceMap.SourceMapConsumer.initialize({
 });
 
 export default {
-    // components: {
-    //     DocAndOtherParseLink,
-    // },
+    components: {
+        // DocAndOtherParseLink,
+        CommentAndAccessStatistics,
+    },
     data() {
         return {
             zipFile: null,
             errorContent: '',
             isRequesting: false,
             errorList: [],
+            placeholder: '请将错误内容放在此处，注意分行，以便自动识别所需的 Source Map 文件',
         };
     },
     methods: {
