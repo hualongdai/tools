@@ -1,15 +1,15 @@
 <template>
     <div class="doc-and-other-parse-link">
         <el-link
-            href="https://mina.corp.kuaishou.com/platform-manual/sourcemap/"
+            href="https://blog.windstone.cc/articles/wechat-mini-program-sourcemap/"
             target="_blank"
             :underline="false"
             class="manual"
         >
-            <span>说明文档</span>
+            <span>使用文档</span>
             <i class="el-icon-link el-icon--right" />
         </el-link>
-        <el-link
+        <!-- <el-link
             v-if="position !== 'one-click-parse'"
             href="/"
             target="_blank"
@@ -38,18 +38,18 @@
         >
             <span>单文件解析服务</span>
             <i class="el-icon-link el-icon--right" />
-        </el-link>
+        </el-link> -->
     </div>
 </template>
 
 <script>
 export default {
-  props: {
-    position: {
-      type: String,
-      default: '',
+    props: {
+        position: {
+            type: String,
+            default: '',
+        },
     },
-  },
 };
 </script>
 

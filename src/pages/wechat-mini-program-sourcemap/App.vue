@@ -4,7 +4,7 @@
             <div class="title">
                 <span>微信小程序 Source Map 解析服务</span>
             </div>
-            <!-- <DocAndOtherParseLink position="upload-zip-parse" /> -->
+            <DocAndOtherParseLink />
         </section>
         <div class="error-input-area">
             <div class="file-input">
@@ -107,8 +107,8 @@
 <script>
 import sourceMap from 'source-map';
 import JSZip from 'jszip';
-// import DocAndOtherParseLink from './other-sourcemap-parse-link.vue';
 import CommentAndAccessStatistics from '@/components/comment-and-access-statistics.vue';
+import DocAndOtherParseLink from '@/components/other-sourcemap-parse-link.vue';
 import { parseErrorContent } from './util';
 
 sourceMap.SourceMapConsumer.initialize({
@@ -117,7 +117,7 @@ sourceMap.SourceMapConsumer.initialize({
 
 export default {
     components: {
-        // DocAndOtherParseLink,
+        DocAndOtherParseLink,
         CommentAndAccessStatistics,
     },
     data() {
